@@ -162,6 +162,27 @@
       outline: none;
     }
     
+    /* Alert Banner Styling */
+    .alert-banner {
+      background-color: #f1c40f;
+      color: #333;
+      padding: 10px 20px;
+      font-size: 0.95em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .alert-banner span {
+      flex-grow: 1;
+    }
+    .alert-banner button {
+      background: none;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       max-width: 1000px;
@@ -271,7 +292,7 @@
       margin-top: 5px;
     }
     
-    /* ===== Feedback Button (Replaced with Updated Message Icon Button) ===== */
+    /* ===== Feedback Button ===== */
     #feedback-btn {
       position: fixed;
       bottom: 20px;
@@ -294,7 +315,6 @@
       transform: scale(1.1);
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
-    /* Updated inline SVG for the chat icon inside the feedback button */
     #feedback-btn svg {
       display: block;
       width: 40px;
@@ -304,7 +324,7 @@
       fill: white;
     }
     
-    /* ===== Modal Feedback Form (unchanged) ===== */
+    /* ===== Modal Feedback Form ===== */
     .modal {
       display: none; /* Hidden by default */
       position: fixed;
@@ -351,7 +371,7 @@
       cursor: pointer;
     }
     
-    /* Responsive Design (unchanged) */
+    /* Responsive Design */
     @media (max-width: 768px) {
       .featured-audio {
         flex-direction: column;
@@ -391,6 +411,9 @@
         order: 4;
         margin-top: 5px;
       }
+      .search-wrapper {
+        width: 220px;
+      }
     }
     
     @media (max-width: 480px) {
@@ -422,9 +445,6 @@
         padding: 8px 12px;
         overflow: hidden;
       }
-      .search-wrapper {
-        width: 220px;
-      }
     }
   </style>
 </head>
@@ -438,13 +458,19 @@
     </div>
   </header>
   
+  <!-- Alert Banner -->
+  <div id="alert-banner" class="alert-banner">
+    <span>If the download button isn’t working, please click the three dots for an alternative download option.</span>
+    <button id="close-alert" aria-label="Dismiss Alert">&times;</button>
+  </div>
+  
   <!-- Featured Audio Section -->
   <div id="featured"></div>
   
   <!-- Audio List Section -->
   <div id="audio-list"></div>
   
-  <!-- Floating Feedback Button (Replaced with Updated Message Icon Button) -->
+  <!-- Floating Feedback Button -->
   <button id="feedback-btn" title="Feedback" aria-label="Feedback">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4-.9L3 21l1.9-4.1A8.966 8.966 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
@@ -662,6 +688,13 @@
         let filteredData = results.map(result => result.item);
         renderAudioList(filteredData);
       }
+    });
+    
+    // Alert Banner Dismissal Logic
+    const alertBanner = document.getElementById('alert-banner');
+    const closeAlertBtn = document.getElementById('close-alert');
+    closeAlertBtn.addEventListener('click', () => {
+      alertBanner.style.display = 'none';
     });
     
     // Feedback Modal Logic
