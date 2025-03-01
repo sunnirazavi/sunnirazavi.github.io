@@ -1,417 +1,687 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naat Sharif - Owais Raza Qadri</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f5f6fa;
-        }
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Listen to Naat Sharif by Owais Raza Qadri. Enjoy high-quality audio tracks, download your favorites, and experience soulful recitations." />
+  <meta name="keywords" content="Naat, Owais Raza Qadri, Naat Sharif, Audio, Islamic Recitations, Download, Rohani N at" />
+  <meta name="author" content="sunnirazavi">
+  <link rel="canonical" href="https://sunnirazavi.github.io/index.html">
 
-        .featured-audio {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            overflow: hidden;
-            flex-wrap: wrap;
-        }
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Naat Collection - Owais Raza Qadri">
+  <meta property="og:description" content="Listen to Naat Sharif by Owais Raza Qadri. Enjoy high-quality audio tracks and download your favorite recitations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sunnirazavi.github.io/index.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/sunnirazavi/sunnirazavi.github.io/e85726914991a9ad6a37f0ba42612f5756aeffb7/Thumbnail/Kya Hi Zoq Afza Shafaat.jpeg">
 
-        .featured-thumbnail {
-            width: 500px;
-            height: 330px;
-            border-radius: 10px;
-            flex-shrink: 0;
-            
-        }
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Naat Collection - Owais Raza Qadri">
+  <meta name="twitter:description" content="Listen to Naat Sharif by Owais Raza Qadri. Enjoy high-quality audio tracks and download your favorite recitations.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/sunnirazavi/sunnirazavi.github.io/e85726914991a9ad6a37f0ba42612f5756aeffb7/Thumbnail/Kya Hi Zoq Afza Shafaat.jpeg">
 
-        .audio-item {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-            overflow: hidden;
-            flex-wrap: wrap;
-            margin-bottom: 0px;   
-        }
+  <!-- Structured Data (JSON-LD) for Rohani N at Playlist -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NaatPlaylist",
+    "name": "Naat Collection - Owais Raza Qadri",
+    "description": "A collection of soulful Naat Sharif by Owais Raza Qadri.",
+    "url": "https://sunnirazavi.github.io/index.html",
+    "creator": {
+      "@type": "Organization",
+      "name": "sunnirazavi"
+    },
+    "track": [
+      {
+        "@type": "NaatRecording",
+        "name": "Kya Hi Zoq Afza Shafaat Hai Tumhari Wah Wah",
+        "url": "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Kya Hi Zoq Afza Shafaat - Owais Raza Qadri - 2021.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Zameen O Zaman Tumhare Liye",
+        "url": "Naat-Collection/Zameen O Zaman Tumhare Liye - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Sir Taba Qadam Hai Tane Sultan E Zaman Phool",
+        "url": "Naat-Collection/Sir Taba Qadam Hai Tane Sultan E Zaman Phool - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Chaman E Taiba Mein Sumbul Jo Saware Gesu",
+        "url": "Naat-Collection/Chaman E Taiba Mein Sumbul - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Dekhni Hai Hashr Mein Izzat Rasoolullah Ki",
+        "url": "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Dekhni Hai Hashr Mein Izzat Rasoolullah Ki - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Sachi Baat Sikhatey Ye Hain",
+        "url": "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Sachi Baat Sikhatey Ye Hain - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Hajiyon Aao Shehenshah Ka Roza Dekho",
+        "url": "Naat-Collection/Hajiyon Aao Shehenshah Ka Roza Dekho - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Lutf Unka Aam Ho Hi Jayega",
+        "url": "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Lutf Unka Aam Ho Hi Jayega - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya",
+        "url": "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 2",
+        "url": "Naat-Collection/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 2 - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Har Waqt Tasawwar Mein Madine Ki Gali Ho",
+        "url": "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Har Waqt Tasawwar Mein Madine Ki Gali Ho - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Zameen O Zaman Tumhare Liye 2",
+        "url": "Naat-Collection/Zameen O Zaman Tumhare Liye 2 - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Sir Taba Qadam Hai Tane Sultan E Zaman Phool 2",
+        "url": "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Sir Taba Qadam Hai Tane Sultan E Zaman Phool 2 - Owais Raza Qadri.mp3"
+      },
+      {
+        "@type": "NaatRecording",
+        "name": "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 3",
+        "url": "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 3 - Owais Raza Qadri.mp3"
+      }
+    ]
+  }
+  </script>
 
-        .audio-item:hover {
-            transform: translateY(-2px);
-        }
+  <!-- Include Fuse.js for Fuzzy Searching -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <!-- Include Font Awesome for the search icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1CmRb96hzbN/wI2p5M8S5Y0+h5LZby8R0Wg34z0AGuZhKzTHHqMb63nUNmsRlsu+PpSp0G+9L/wY6yD+4n5dQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        .thumbnail {
-            width: 200px;
-            height: 130px;
-            border-radius: 8px;
-            object-fit: ;
-            flex-shrink: 0;
-        }
-
-        .track-info {
-            flex-grow: 1;
-            min-width: 150px;
-            margin-left: 15px;
-        }
-
-        .track-title {
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 1.1em;
-        }
-
-        .track-Reciter {
-            margin: 5px 0 0;
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
-
-          audio {
-            flex-grow: 2;
-            min-width: 200px;
-            max-width: 400px;
-            margin-left: 0px;
-        }
-
-        .download-btn {
-            background: var(--secondary-color);
-            color: white;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 20px;
-            font-size: 14px;
-            transition: background 0.3s;
-            flex-shrink: 0;
-        }
-
-        .download-btn:hover {
-            background: #2980b9;
-        }
-
-        .featured-title {
-            font-size: 1.5em;
-            margin: 0 0 10px;
-        }
-    
-    .featured-info {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-left:15px;
+  <title>Naat Collection - Owais Raza Qadri</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
     }
     
- .featured-info .download-btn {
-    width: 70%; /* Default desktop behavior */
-    text-align: center;
-    margin-top: 5px;
-}
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .featured-audio {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-           
-            .featured-thumbnail {
-                width: 405px ;
-                height: 300px ;
-            }
-
-            .featured-title {
-                font-size: 1.3em;
-            }
-            .thumbnail {
-                width: 220px;
-                height: 180px;
-            }
-
-            .audio-item {
-                flex-wrap: wrap;
-                gap: 10px;
-                padding: 12px;
-                margin-bottom: 2px;
-            }
-
-            audio {
-                min-width: 100%;
-                order: 3; /* Move audio player below text */
-            }
-            
-     .featured-info .download-btn {
+    /* Navigation Header Styling */
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+    .search-wrapper {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 25px;
+      padding: 5px 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      width: 280px;
+    }
+    .search-wrapper i {
+      color: var(--secondary-color);
+      margin-right: 10px;
+      font-size: 1.2em;
+    }
+    #nav-search {
+      width: 100%;
+      padding: 10px 5px;
+      border: none;
+      background-color: transparent;
+      color: #333;
+      font-size: 16px;
+      outline: none;
+    }
+    #nav-search:focus {
+      outline: none;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f6fa;
+    }
+    
+    .featured-audio {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin: 30px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      overflow: hidden;
+      flex-wrap: wrap;
+    }
+    .featured-thumbnail {
+      width: 500px;
+      height: 330px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+    
+    .audio-item {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+      overflow: hidden;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+    .audio-item:hover {
+      transform: translateY(-2px);
+    }
+    
+    .thumbnail {
+      width: 200px;
+      height: 130px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    
+    .track-info {
+      flex-grow: 1;
+      min-width: 150px;
+      margin-left: 15px;
+    }
+    
+    .track-title {
+      margin: 0;
+      color: var(--primary-color);
+      font-size: 1.1em;
+    }
+    
+    .track-Reciter {
+      margin: 5px 0 0;
+      color: #7f8c8d;
+      font-size: 0.9em;
+    }
+    
+    audio {
+      flex-grow: 2;
+      min-width: 200px;
+      max-width: 400px;
+      margin-left: 0;
+    }
+    
+    .download-btn {
+      background: var(--secondary-color);
+      color: white;
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: background 0.3s;
+      flex-shrink: 0;
+    }
+    .download-btn:hover {
+      background: #2980b9;
+    }
+    
+    .featured-title {
+      font-size: 1.5em;
+      margin: 0 0 10px;
+    }
+    
+    .featured-info {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-left: 15px;
+    }
+    .featured-info .download-btn {
+      width: 70%;
+      text-align: center;
+      margin-top: 5px;
+    }
+    
+    /* ===== Feedback Button (Replaced with Updated Message Icon Button) ===== */
+    #feedback-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+      border: none;
+      border-radius: 50%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #feedback-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    /* Updated inline SVG for the chat icon inside the feedback button */
+    #feedback-btn svg {
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+      padding: 0;
+      fill: white;
+    }
+    
+    /* ===== Modal Feedback Form (unchanged) ===== */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      position: relative;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    .modal-content input,
+    .modal-content textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .modal-content button {
+      background: var(--secondary-color);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    /* Responsive Design (unchanged) */
+    @media (max-width: 768px) {
+      .featured-audio {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+      .featured-thumbnail {
+        width: 405px;
+        height: 300px;
+      }
+      .featured-title {
+        font-size: 1.3em;
+      }
+      .thumbnail {
+        width: 220px;
+        height: 180px;
+      }
+      .audio-item {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px;
+        margin-bottom: 2px;
+      }
+      audio {
+        min-width: 100%;
+        order: 3;
+      }
+      .featured-info .download-btn {
         width: 92%;
         display: block;
         text-align: center;
-        margin-top:5px;
+        margin-top: 5px;
+      }
+      .download-btn {
+        width: 93%;
+        text-align: center;
+        order: 4;
+        margin-top: 5px;
+      }
     }
-
-            .download-btn {
-                width: 93%;
-                text-align: center;
-                order: 4; /* Move download button to the bottom */
-                margin-top: 5px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 15px;
-            }
-
-            .featured-audio {
-                padding: 15px;
-            }
-
-            .featured-thumbnail {
-                width: 305px;
-                height: 200px;
-            }
-
-            .featured-title {
-                font-size: 1.2em;
-            }
-            .thumbnail {
-                width: 120px;
-                height: 80px;
-            }
-
-            .track-title {
-                font-size: 1em;
-            }
-
-            .track-artist {
-                font-size: 0.85em;
-            }
-
-            .download-btn {
-                font-size: 13px;
-                padding: 8px 12px;
-                overflow: hidden;
-            }
-        }
-    </style>
+    
+    @media (max-width: 480px) {
+      body {
+        padding: 15px;
+      }
+      .featured-audio {
+        padding: 15px;
+      }
+      .featured-thumbnail {
+        width: 305px;
+        height: 200px;
+      }
+      .featured-title {
+        font-size: 1.2em;
+      }
+      .thumbnail {
+        width: 120px;
+        height: 80px;
+      }
+      .track-title {
+        font-size: 1em;
+      }
+      .track-artist {
+        font-size: 0.85em;
+      }
+      .download-btn {
+        font-size: 13px;
+        padding: 8px 12px;
+        overflow: hidden;
+      }
+      .search-wrapper {
+        width: 220px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="featured"></div>
-    <div id="audio-list"></div>
+  <!-- Navigation Header with Integrated Search Bar -->
+  <header>
+    <h1>Naat Collection</h1>
+    <div class="search-wrapper">
+      <i class="fa fa-search"></i>
+      <input type="text" id="nav-search" placeholder="Search tracks..." />
+    </div>
+  </header>
+  
+  <!-- Featured Audio Section -->
+  <div id="featured"></div>
+  
+  <!-- Audio List Section -->
+  <div id="audio-list"></div>
+  
+  <!-- Floating Feedback Button (Replaced with Updated Message Icon Button) -->
+  <button id="feedback-btn" title="Feedback" aria-label="Feedback">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4-.9L3 21l1.9-4.1A8.966 8.966 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+    </svg>
+  </button>
+  
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Feedback</h2>
+      <form id="feedback-form" action="https://formspree.io/f/xpwqvqlb" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Feedback" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
 
-    <script>
-        // Audio Data Configuration
-        const audioData = [
-            {
-                id: 1,
-                title: "Kya Hi Zoq Afza Shafaat Hai Tumhari Wah Wah",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Kya Hi Zoq Afza Shafaat - Owais Raza Qadri - 2021.mp3",
-                thumb: "Thumbnail/Kya Hi Zoq Afza Shafaat.jpeg",
-                featured: true
-            },
-            {
-                id: 2,
-                title: "Zameen O Zaman Tumhare Liye",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Zameen O Zaman Tumhare Liye - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Zameen O Zaman Tumhare Liye.jpeg"
-            },
-    
-            {
-                id: 3,
-                title: "Sir Taba Qadam Hai Tane Sultan E Zaman Phool",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Sir Taba Qadam Hai Tane Sultan E Zaman Phool - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Sir Taba Qadam.jpeg"
-            },
-            
-           {
-                id: 4,
-                title: "Chaman E Taiba Mein Sumbul Jo Saware Gesu",
-                Reciter: "Owais Raza Qadri",
-                file:  "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Chaman E Taiba Mein Sumbul - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Chaman E Taiba Mein Sumbul.jpeg"
-            },
-    
-            {
-                id: 5,
-                title: "Dekhni Hai Hashr Mein Izzat Rasoolullah Ki",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Dekhni Hai Hashr Mein Izzat Rasoolullah Ki - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Dekhni Hai Hashr Mein.jpeg"
-            },
-    
-         {
-                id: 6,
-                title: "Sachi Baat Sikhatey Ye Hain",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Sachi Baat Sikhatey Ye Hain - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Sachi Baat Sikhatey Ye Hain.jpeg"
-            },
-    
-           {
-                id: 7,
-                title: "Hajiyon Aao Shehenshah Ka Roza Dekho",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Hajiyon Aao Shehenshah Ka Roza Dekho - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Hajiyon Aao.jpeg"
-            },
-    
-           {
-                id: 8,
-                title: "Lutf Unka Aam Ho Hi Jayega",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Lutf Unka Aam Ho Hi Jayega - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Lutf Unka Aam.jpeg"
-            },
-    
-             {
-                id: 9,
-                title: "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Bakhte Khufta Ne.jpeg"
-            },
-    
-            {
-                id: 10,
-                title: "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 2",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 2 - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Bakhte Khufta Ne - 2.jpeg"
-            },
-    
-              {
-                id: 11,
-                title: "Har Waqt Tasawwar Mein Madine Ki Gali Ho",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Har Waqt Tasawwar Mein Madine Ki Gali Ho - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Har Waqt Tasawwar.jpeg"
-            },
-           
-           {
-                id: 12,
-                title: "Zameen O Zaman Tumhare Liye 2",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Zameen O Zaman Tumhare Liye 2 - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Zameen O Zaman Tumhare Liye - 2.jpeg"
-            },
-    
-            {
-                id: 13,
-                title: "Sir Taba Qadam Hai Tane Sultan E Zaman Phool 2",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Sir Taba Qadam Hai Tane Sultan E Zaman Phool 2 - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Sir Taba Qadam - 2.jpeg"
-            },
-            {
-                id: 14,
-                title: "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 3",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 3 - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Bakhte Khufta Ne - 3.jpeg"
-            }
-    
-            /* {
-                id: 15,
-                title: "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Bakhte Khufta Ne.jpeg"
-            },
-    
-            {
-                id: 16,
-                title: "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya",
-                Reciter: "Owais Raza Qadri",
-                file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya - Owais Raza Qadri.mp3",
-                thumb: "Thumbnail/Bakhte Khufta Ne.jpeg"
-            }*/
-          
-        ];
+  <script>
+    // Audio Data Configuration
+    const audioData = [
+      {
+        id: 1,
+        title: "Kya Hi Zoq Afza Shafaat Hai Tumhari Wah Wah",
+        Reciter: "Owais Raza Qadri",
+        file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Kya Hi Zoq Afza Shafaat - Owais Raza Qadri - 2021.mp3",
+        thumb: "Thumbnail/Kya Hi Zoq Afza Shafaat.jpeg",
+        featured: true
+      },
+      {
+        id: 2,
+        title: "Zameen O Zaman Tumhare Liye",
+        Reciter: "Owais Raza Qadri",
+        file: "Naat-Collection/Zameen O Zaman Tumhare Liye - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Zameen O Zaman Tumhare Liye.jpeg"
+      },
+      {
+        id: 3,
+        title: "Sir Taba Qadam Hai Tane Sultan E Zaman Phool",
+        Reciter: "Owais Raza Qadri",
+        file: "Naat-Collection/Sir Taba Qadam Hai Tane Sultan E Zaman Phool - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Sir Taba Qadam.jpeg"
+      },
+      {
+        id: 4,
+        title: "Chaman E Taiba Mein Sumbul Jo Saware Gesu",
+        Reciter: "Owais Raza Qadri",
+        file: "Naat-Collection/Chaman E Taiba Mein Sumbul - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Chaman E Taiba Mein Sumbul.jpeg"
+      },
+      {
+        id: 5,
+        title: "Dekhni Hai Hashr Mein Izzat Rasoolullah Ki",
+        Reciter: "Owais Raza Qadri",
+        file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Dekhni Hai Hashr Mein Izzat Rasoolullah Ki - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Dekhni Hai Hashr Mein.jpeg"
+      },
+      {
+        id: 6,
+        title: "Sachi Baat Sikhatey Ye Hain",
+        Reciter: "Owais Raza Qadri",
+        file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Sachi Baat Sikhatey Ye Hain - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Sachi Baat Sikhatey Ye Hain.jpeg"
+      },
+      {
+        id: 7,
+        title: "Hajiyon Aao Shehenshah Ka Roza Dekho",
+        Reciter: "Owais Raza Qadri",
+        file: "Naat-Collection/Hajiyon Aao Shehenshah Ka Roza Dekho - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Hajiyon Aao.jpeg"
+      },
+      {
+        id: 8,
+        title: "Lutf Unka Aam Ho Hi Jayega",
+        Reciter: "Owais Raza Qadri",
+        file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Lutf Unka Aam Ho Hi Jayega - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Lutf Unka Aam.jpeg"
+      },
+      {
+        id: 9,
+        title: "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya",
+        Reciter: "Owais Raza Qadri",
+        file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Bakhte Khufta Ne.jpeg"
+      },
+      {
+        id: 10,
+        title: "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 2",
+        Reciter: "Owais Raza Qadri",
+        file: "Naat-Collection/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 2 - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Bakhte Khufta Ne - 2.jpeg"
+      },
+      {
+        id: 11,
+        title: "Har Waqt Tasawwar Mein Madine Ki Gali Ho",
+        Reciter: "Owais Raza Qadri",
+        file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Har Waqt Tasawwar Mein Madine Ki Gali Ho - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Har Waqt Tasawwar.jpeg"
+      },
+      {
+        id: 12,
+        title: "Zameen O Zaman Tumhare Liye 2",
+        Reciter: "Owais Raza Qadri",
+        file: "Naat-Collection/Zameen O Zaman Tumhare Liye 2 - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Zameen O Zaman Tumhare Liye - 2.jpeg"
+      },
+      {
+        id: 13,
+        title: "Sir Taba Qadam Hai Tane Sultan E Zaman Phool 2",
+        Reciter: "Owais Raza Qadri",
+        file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Sir Taba Qadam Hai Tane Sultan E Zaman Phool 2 - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Sir Taba Qadam - 2.jpeg"
+      },
+      {
+        id: 14,
+        title: "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 3",
+        Reciter: "Owais Raza Qadri",
+        file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 3 - Owais Raza Qadri.mp3",
+        thumb: "Thumbnail/Bakhte Khufta Ne - 3.jpeg"
+      }
+    ];
 
-        // Get featured track from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const featuredId = urlParams.get('featured') || 1;
-
-        // Generate HTML for featured audio
-        function createFeaturedAudio(track) {
-            return `
-                <div class="featured-audio">
-                    <img src="${track.thumb}" alt="Featured Track" class="featured-thumbnail">
-                    <div class="featured-info">
-                        <h2 class="featured-title">Featured: ${track.title}</h2>
-                        <audio controls>
-                            <source src="${track.file}" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <a href="${track.file}" download class="download-btn">
-                            Download Featured Naat
-                        </a>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Generate HTML for list audio
-        function createAudioItem(track) {
-            return `
-                <div class="audio-item">
-                    <img src="${track.thumb}" alt="Track Cover" class="thumbnail">
-                    <div class="track-info">
-                        <h3 class="track-title">${track.title}</h3>
-                        <p class="track-Reciter">${track.Reciter}</p>
-                    </div>
-                    <audio controls>
-                        <source src="${track.file}" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <a href="${track.file}" download class="download-btn">Download</a>
-                </div>
-            `;
-        }
-
-        // Audio Control Logic
-function handleAudioControls() {
-    const audios = document.querySelectorAll('audio');
-    let currentAudio = null;
-
-    audios.forEach(audio => {
-        audio.addEventListener('play', () => {
-            if (currentAudio && currentAudio !== audio) {
-                currentAudio.pause();
-            }
-            currentAudio = audio;
-        });
-    });
-}
+    // Get featured track from URL (or default to track id 1)
+    const urlParams = new URLSearchParams(window.location.search);
+    const featuredId = urlParams.get('featured') || 1;
     const featuredTrack = audioData.find(track => track.id == featuredId) || audioData[0];
-        document.getElementById('featured').innerHTML = createFeaturedAudio(featuredTrack);
 
-        const trackList = audioData
-            .filter(track => track.id != featuredId)
-            .map(track => createAudioItem(track))
-            .join('');
-        document.getElementById('audio-list').innerHTML = trackList;
-        
-       handleAudioControls(); 
+    // Initialize Fuse.js for fuzzy searching.
+    const fuseOptions = {
+      keys: ['title', 'Reciter'],
+      threshold: 0.3,
+      ignoreLocation: true,
+      includeScore: true
+    };
+    const fuse = new Fuse(audioData, fuseOptions);
 
-    </script>
+    // Function to generate HTML for the featured audio track
+    function createFeaturedAudio(track) {
+      return `
+        <div class="featured-audio">
+          <img src="${track.thumb}" alt="Featured Track" class="featured-thumbnail">
+          <div class="featured-info">
+            <h2 class="featured-title">Featured: ${track.title}</h2>
+            <audio controls>
+              <source src="${track.file}" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <a href="${track.file}" download class="download-btn">
+              Download Featured Naat
+            </a>
+          </div>
+        </div>
+      `;
+    }
+
+    // Function to generate HTML for a single audio item
+    function createAudioItem(track) {
+      return `
+        <div class="audio-item">
+          <img src="${track.thumb}" alt="Track Cover" class="thumbnail">
+          <div class="track-info">
+            <h3 class="track-title">${track.title}</h3>
+            <p class="track-Reciter">${track.Reciter}</p>
+          </div>
+          <audio controls>
+            <source src="${track.file}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <a href="${track.file}" download class="download-btn">Download</a>
+        </div>
+      `;
+    }
+
+    // Function to ensure only one audio plays at a time
+    function handleAudioControls() {
+      const audios = document.querySelectorAll('audio');
+      let currentAudio = null;
+      audios.forEach(audio => {
+        audio.addEventListener('play', () => {
+          if (currentAudio && currentAudio !== audio) {
+            currentAudio.pause();
+          }
+          currentAudio = audio;
+        });
+      });
+    }
+
+    // Function to render the audio list (either default or filtered)
+    function renderAudioList(filteredData = null) {
+      let tracks;
+      if (filteredData !== null) {
+        tracks = filteredData;
+      } else {
+        tracks = audioData.filter(track => track.id != featuredTrack.id);
+      }
+      document.getElementById('audio-list').innerHTML = tracks.map(createAudioItem).join('');
+      handleAudioControls();
+    }
+
+    // Initial Render: Display featured track and full audio list
+    document.getElementById('featured').innerHTML = createFeaturedAudio(featuredTrack);
+    renderAudioList();
+
+    // Improved Search using Fuse.js on the navigation search bar
+    document.getElementById('nav-search').addEventListener('input', function() {
+      let query = this.value.trim();
+      if (query === "") {
+        document.getElementById('featured').innerHTML = createFeaturedAudio(featuredTrack);
+        renderAudioList();
+      } else {
+        document.getElementById('featured').innerHTML = "";
+        let results = fuse.search(query);
+        let filteredData = results.map(result => result.item);
+        renderAudioList(filteredData);
+      }
+    });
+    
+    // Feedback Modal Logic
+    const feedbackBtn = document.getElementById('feedback-btn');
+    const feedbackModal = document.getElementById('feedback-modal');
+    const closeBtn = document.querySelector('.modal .close');
+
+    feedbackBtn.addEventListener('click', () => {
+      feedbackModal.style.display = "block";
+    });
+
+    closeBtn.addEventListener('click', () => {
+      feedbackModal.style.display = "none";
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target == feedbackModal) {
+        feedbackModal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
