@@ -220,13 +220,15 @@ function createAudioItem(track) {
       </div>
     `;
 }
+let currentAudio = null;
 function handleAudioControls() {
   const audios = document.querySelectorAll("audio");
-  let currentAudio = null;
 
   audios.forEach((audio) => {
     if (audio.previousElementSibling?.classList.contains("loading-text"))
       return;
+    if (audio.dataset.handled) return; // ⚠️ Prevent duplicate listeners
+    audio.dataset.handled = "true";
 
     const loadingText = document.createElement("div");
     loadingText.textContent = "🔄 Audio Loading...";
