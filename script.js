@@ -159,7 +159,7 @@ const audioData = [
     id: "Bakhte Khufta Ne 3",
     title: "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 3",
     Reciter: "Owais Raza Qadri",
-    file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte%20Khufta%20Ne%20Mujhe%20Roze%20Pe%20Jane%20Na%20Diya%203%20-%20Owais%20Raza%20Qadri.mp3",
+    file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte%20Khufta%20Ne%20Mujhe%20Roze%20Pe%20Jane%20Na%20Diya%203%20-%20Owais%20Raza%20Qadriq.mp3",
     thumb: "Thumbnail/Bakhte%20Khufta%20Ne%20-%203.jpeg",
   },
 ];
@@ -220,17 +220,55 @@ function createAudioItem(track) {
       </div>
     `;
 }
-
-// Function to ensure only one audio plays at a time
 function handleAudioControls() {
   const audios = document.querySelectorAll("audio");
   let currentAudio = null;
+
   audios.forEach((audio) => {
+    if (audio.previousElementSibling?.classList.contains("loading-text"))
+      return;
+
+    const loadingText = document.createElement("div");
+    loadingText.textContent = "🔄 Audio Loading...";
+    loadingText.classList.add("loading-text");
+    loadingText.style.marginBottom = "8px";
+    loadingText.style.fontSize = "14px";
+    loadingText.style.color = "#ccc";
+    loadingText.style.display = "none";
+    audio.parentNode.insertBefore(loadingText, audio);
+
+    let timeoutId;
+
     audio.addEventListener("play", () => {
-      if (currentAudio && currentAudio !== audio) {
-        currentAudio.pause();
-      }
+      if (currentAudio && currentAudio !== audio) currentAudio.pause();
       currentAudio = audio;
+
+      loadingText.style.display = "block";
+      loadingText.textContent = "🔄 Audio Loading...";
+
+      // ⏱ Timeout after 10 seconds
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if (!audio.readyState || audio.readyState < 3) {
+          loadingText.textContent = "❌ Failed to load (Timeout)";
+          loadingText.style.color = "red";
+        }
+      }, 10000);
+    });
+
+    const hideLoading = () => {
+      loadingText.style.display = "none";
+      clearTimeout(timeoutId);
+    };
+
+    audio.addEventListener("canplaythrough", hideLoading);
+    audio.addEventListener("playing", hideLoading);
+    audio.addEventListener("pause", hideLoading);
+
+    audio.addEventListener("error", () => {
+      loadingText.textContent = "❌ Failed to load (Error)";
+      loadingText.style.color = "red";
+      clearTimeout(timeoutId);
     });
   });
 }
