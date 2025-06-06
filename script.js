@@ -159,7 +159,7 @@ const audioData = [
     id: "Bakhte Khufta Ne 3",
     title: "Bakhte Khufta Ne Mujhe Roze Pe Jane Na Diya 3",
     Reciter: "Owais Raza Qadri",
-    file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte%20Khufta%20Ne%20Mujhe%20Roze%20Pe%20Jane%20Na%20Diya%203%20-%20Owais%20Raza%20Qadriq.mp3",
+    file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Bakhte%20Khufta%20Ne%20Mujhe%20Roze%20Pe%20Jane%20Na%20Diya%203%20-%20Owais%20Raza%20Qadri.mp3",
     thumb: "Thumbnail/Bakhte%20Khufta%20Ne%20-%203.jpeg",
   },
 ];
