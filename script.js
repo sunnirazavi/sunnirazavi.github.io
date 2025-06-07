@@ -6,7 +6,6 @@ const audioData = [
     Reciter: "Owais Raza Qadri",
     file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Kya%20Hi%20Zoq%20Afza%20Shafaat%20-%20Owais%20Raza%20Qadri%20-%202021.mp3?v=1.0",
     thumb: "Thumbnail/Kya%20Hi%20Zoq%20Afza%20Shafaat.jpeg?v=1.0",
-    featured: true,
   },
   {
     id: "qaseeda burda shareef",
@@ -14,6 +13,7 @@ const audioData = [
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/qaseeda-burda-shareef.mp3?v=1.0",
     thumb: "Thumbnail/qaseeda-burda-shareef.png?v=1.0",
+    featured: true,
   },
   {
     id: "wo soye lalazar new tarz",
