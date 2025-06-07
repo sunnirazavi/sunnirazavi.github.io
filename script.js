@@ -1,13 +1,6 @@
 // Audio Data Configuration with updated URLs and lazy-loading attributes
 const audioData = [
   {
-    id: "Kya Hi Zoq Afza",
-    title: "Kya Hi Zoq Afza Shafaat Hai Tumhari Wah Wah",
-    Reciter: "Owais Raza Qadri",
-    file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Kya%20Hi%20Zoq%20Afza%20Shafaat%20-%20Owais%20Raza%20Qadri%20-%202021.mp3?v=1.0",
-    thumb: "Thumbnail/Kya%20Hi%20Zoq%20Afza%20Shafaat.jpeg?v=1.0",
-  },
-  {
     id: "qaseeda burda shareef",
     title: "Qaseeda Burda Shareef With Kalam E Raza",
     Reciter: "Owais Raza Qadri",
@@ -42,6 +35,13 @@ const audioData = [
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/pul-se-utaro.mp3?v=1.0",
     thumb: "Thumbnail/pul-se-utaro.png?v=1.0",
+  },
+  {
+    id: "Kya Hi Zoq Afza",
+    title: "Kya Hi Zoq Afza Shafaat Hai Tumhari Wah Wah",
+    Reciter: "Owais Raza Qadri",
+    file: "https://cdn.jsdelivr.net/gh/sunnirazavi/Naat-Collection@main/Kya%20Hi%20Zoq%20Afza%20Shafaat%20-%20Owais%20Raza%20Qadri%20-%202021.mp3?v=1.0",
+    thumb: "Thumbnail/Kya%20Hi%20Zoq%20Afza%20Shafaat.jpeg?v=1.0",
   },
   {
     id: "kuch aisa kar de",
@@ -171,10 +171,14 @@ let currentFilteredData = null;
 
 // Get featured track from URL (or default to track id 1)
 const urlParams = new URLSearchParams(window.location.search);
-const featuredId = urlParams.get("featured") || "Kya Hi Zoq Afza";
-const featuredTrack =
-  audioData.find((track) => track.id === featuredId) || audioData[0];
-
+const featuredId = urlParams.get("featured");
+let featuredTrack = null;
+if (!featuredId) {
+  featuredTrack = audioData.find((track) => track.featured) || audioData[0];
+} else {
+  featuredTrack =
+    audioData.find((track) => track.id === featuredId) || audioData[0];
+}
 // Initialize Fuse.js for fuzzy searching.
 const fuseOptions = {
   keys: ["title", "Reciter"],
