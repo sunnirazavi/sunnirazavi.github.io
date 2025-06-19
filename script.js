@@ -1,40 +1,48 @@
 // Audio Data Configuration with updated URLs and lazy-loading attributes
 const audioData = [
   {
+    id: "kabe ke badrudduja",
+    title: "Kabe Ke Badrudduja Tum Pe Karoron Durood",
+    Reciter: "Owais Raza Qadri",
+    file: "Naat-Collection/kabe-ke-badrudduja.mp3?v=1.0",
+    thumb: "Thumbnail/kabe-ke-badrudduja.jpg?v=1.0",
+    featured: true,
+  },
+  {
     id: "qaseeda burda shareef",
     title: "Qaseeda Burda Shareef With Kalam E Raza",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/qaseeda-burda-shareef.mp3?v=1.0",
-    thumb: "Thumbnail/qaseeda-burda-shareef.png?v=1.0",
-    featured: true,
+    thumb: "Thumbnail/qaseeda-burda-shareef.jpg?v=1.0",
+    featured: false,
   },
   {
     id: "wo soye lalazar new tarz",
     title: "Wo Soye Lalazar Phirte Hain - New Tarz",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/wo-soye-lalazar-new-tarz.mp3?v=1.0",
-    thumb: "Thumbnail/wo-soye-lalazar-new-tarz.png?v=1.0",
+    thumb: "Thumbnail/wo-soye-lalazar-new-tarz.jpg?v=1.0",
   },
   {
     id: "wo soye lalazar",
     title: "Wo Soye Lalazar Phirte Hain",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/wo-soye-lalazar.mp3?v=1.0",
-    thumb: "Thumbnail/wo-soye-lalazar.png?v=1.0",
+    thumb: "Thumbnail/wo-soye-lalazar.jpg?v=1.0",
   },
   {
     id: "utha do parda",
     title: "Utha Do Parda Dikha do Chehra",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/utha-do-parda.mp3?v=1.0",
-    thumb: "Thumbnail/utha-do-parda.png?v=1.0",
+    thumb: "Thumbnail/utha-do-parda.jpg?v=1.0",
   },
   {
     id: "pul se utaro",
     title: "Pul Se Utaro Rah Guzar Ko Khabar Na HO",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/pul-se-utaro.mp3?v=1.0",
-    thumb: "Thumbnail/pul-se-utaro.png?v=1.0",
+    thumb: "Thumbnail/pul-se-utaro.jpg?v=1.0",
   },
   {
     id: "Kya Hi Zoq Afza",
@@ -48,28 +56,28 @@ const audioData = [
     title: "Kuch Aisa Kar De Mere Kirdgar Aankhon Mein",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/kuch-aisa-kar-de.mp3?v=1.0",
-    thumb: "Thumbnail/kuch-aisa-kar-de.png?v=1.0",
+    thumb: "Thumbnail/kuch-aisa-karde.jpg?v=1.0",
   },
   {
     id: "wo kamal",
     title: "Wo Kamal E Husn E Huzoor Hain",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/wo-kamal.mp3?v=1.0",
-    thumb: "Thumbnail/wo-kamal.png?v=1.0",
+    thumb: "Thumbnail/wo-kamal.jpg?v=1.0",
   },
   {
     id: "jo ishq e nabi",
     title: "Jo Ishq E Nabi Ke Jalwon Ko Seeno Mein Basaya Karte Hain",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/jo-ishq-e-nabi.mp3?v=1.0",
-    thumb: "Thumbnail/jo-ishq-e-nabi.png?v=1.0",
+    thumb: "Thumbnail/jo-ishq-e-nabi.jpg?v=1.0",
   },
   {
     id: "hum par saya",
     title: "Khuda Ke Fazal Se Hum Par Hai Saya Ghous E Aazam Ka",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/hum-par-saya.mp3?v=1.0",
-    thumb: "Thumbnail/hum-par-saya.png?v=1.0",
+    thumb: "Thumbnail/hum-par-saya.jpg?v=1.0",
   },
   {
     id: "Zameen O Zaman",
@@ -192,6 +200,7 @@ const default_thumb = "default_thumb.png";
 function createFeaturedAudio(track) {
   return `
       <div class="featured-audio">
+      <div class="container">
         <img src="${track.thumb}" alt="Featured Track" class="featured-thumbnail" loading="lazy" onerror="this.onerror=null; this.src='default_thumb.png';">
         <div class="featured-info">
           <h2 class="featured-title">Featured: ${track.title}</h2>
@@ -200,6 +209,7 @@ function createFeaturedAudio(track) {
             Your browser does not support the audio element.
           </audio>
           <a href="${track.file}" download class="download-btn">Download Featured Naat</a>
+        </div>
         </div>
       </div>
     `;
@@ -216,11 +226,13 @@ function createAudioItem(track) {
           <h3 class="track-title">${track.title}</h3>
           <p class="track-Reciter">${track.Reciter}</p>
         </div>
-        <audio controls preload="none">
+        <div class="audio-controls">
+        <audio controls preload="none" class="audio-player">
           <source src="${track.file}" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
         <a href="${track.file}" download class="download-btn">Download</a>
+        </div>
       </div>
     `;
 }
@@ -337,6 +349,9 @@ const closeAlertBtn = document.getElementById("close-alert");
 closeAlertBtn.addEventListener("click", () => {
   alertBanner.style.display = "none";
 });
+setTimeout(() => {
+  alertBanner.style.display = "none";
+}, 10*1000);
 
 // Feedback Modal Logic
 const feedbackBtn = document.getElementById("feedback-btn");
