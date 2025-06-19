@@ -196,46 +196,114 @@ const fuseOptions = {
 };
 const fuse = new Fuse(audioData, fuseOptions);
 const default_thumb = "default_thumb.png";
-// Function to generate HTML for the featured audio track
+/// === Global Autoplay Toggle ===
+let autoplayEnabled = false;
+const allAudioPlayers = [];
+
+// === Generate HTML ===
 function createFeaturedAudio(track) {
   return `
-      <div class="featured-audio">
+    <div class="featured-audio">
       <div class="container">
         <img src="${track.thumb}" alt="Featured Track" class="featured-thumbnail" loading="lazy" onerror="this.onerror=null; this.src='default_thumb.png';">
         <div class="featured-info">
           <h2 class="featured-title">Featured: ${track.title}</h2>
-          <audio controls preload="none">
+          <audio controls preload="auto" class="audio-player" data-featured>
             <source src="${track.file}" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
+          <div class="custom-controls">
+            <button class="skip-btn">⏩ +10 sec</button>
+            <button class="loop-btn">🔁 Loop: Off</button>
+          </div>
           <a href="${track.file}" download class="download-btn">Download Featured Naat</a>
         </div>
-        </div>
       </div>
-    `;
+    </div>
+  `;
 }
 
-// Function to generate HTML for a single audio item
 function createAudioItem(track) {
   return `
-      <div class="audio-item">
-        <img src="${
-          track.thumb || default_thumb
-        }" alt="Track Cover" class="thumbnail" loading="lazy" onerror="this.onerror=null; this.src='default_thumb.png';">
-        <div class="track-info">
-          <h3 class="track-title">${track.title}</h3>
-          <p class="track-Reciter">${track.Reciter}</p>
-        </div>
-        <div class="audio-controls">
+    <div class="audio-item">
+      <img src="${track.thumb || default_thumb}" alt="Track Cover" class="thumbnail" loading="lazy" onerror="this.onerror=null; this.src='default_thumb.png';">
+      <div class="track-info">
+        <h3 class="track-title">${track.title}</h3>
+        <p class="track-Reciter">${track.Reciter}</p>
+      </div>
+      <div class="audio-controls">
         <audio controls preload="none" class="audio-player">
           <source src="${track.file}" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
-        <a href="${track.file}" download class="download-btn">Download</a>
+        <div class="custom-controls">
+          <button class="skip-btn">⏩ +10 sec</button>
+          <button class="loop-btn">🔁 Loop: Off</button>
         </div>
+        <a href="${track.file}" download class="download-btn">Download</a>
       </div>
-    `;
+    </div>
+  `;
 }
+
+// === Global Controls ===
+document.addEventListener("DOMContentLoaded", () => {
+  // Create autoplay toggle
+  const globalToggle = document.createElement("button");
+  globalToggle.id = "autoplay-toggle";
+  globalToggle.textContent = "Autoplay: Off";
+  globalToggle.classList.add("global-autoplay-btn");
+  document.querySelector("header").appendChild(globalToggle);
+
+  globalToggle.addEventListener("click", () => {
+    autoplayEnabled = !autoplayEnabled;
+    globalToggle.textContent = `Autoplay: ${autoplayEnabled ? "On" : "Off"}`;
+    globalToggle.classList.toggle("on", autoplayEnabled);
+  });
+
+  // Track all audios
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll(".audio-player").forEach(audio => {
+      if (!allAudioPlayers.includes(audio)) {
+        allAudioPlayers.push(audio);
+
+        audio.addEventListener("ended", () => {
+          if (autoplayEnabled) {
+            const idx = allAudioPlayers.indexOf(audio);
+            const next = allAudioPlayers[idx + 1];
+            if (next) next.play();
+          }
+        });
+
+        audio.addEventListener("play", () => {
+          allAudioPlayers.forEach(a => {
+            if (a !== audio) a.pause();
+          });
+        });
+      }
+    });
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+
+// === Individual Controls ===
+document.addEventListener("click", function (e) {
+  const container = e.target.closest(".audio-controls, .featured-info");
+  if (!container) return;
+
+  const audio = container.querySelector("audio");
+
+  if (e.target.classList.contains("skip-btn") && audio) {
+    audio.currentTime += 10;
+  }
+
+  if (e.target.classList.contains("loop-btn") && audio) {
+    audio.loop = !audio.loop;
+    e.target.textContent = audio.loop ? "🔁 Loop: On" : "🔁 Loop: Off";
+  }
+});
+
+
 let currentAudio = null;
 function handleAudioControls() {
   const audios = document.querySelectorAll("audio");
@@ -351,7 +419,7 @@ closeAlertBtn.addEventListener("click", () => {
 });
 setTimeout(() => {
   alertBanner.style.display = "none";
-}, 10*1000);
+}, 10 * 1000);
 
 // Feedback Modal Logic
 const feedbackBtn = document.getElementById("feedback-btn");

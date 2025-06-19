@@ -3,7 +3,6 @@
   --secondary-color: #3498db;
 }
 
-
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   max-width: 1000px;
@@ -187,6 +186,10 @@ audio {
   text-align: center;
   margin-top: 5px;
 }
+.audio-controls .download-btn {
+  display: flex;
+  justify-content: center;
+}
 
 /* ===== Feedback Button ===== */
 #feedback-btn {
@@ -264,6 +267,45 @@ audio {
   font-size: 24px;
   cursor: pointer;
 }
+.custom-controls {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.custom-controls button {
+  background: #2c3e50;
+  color: white;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.custom-controls button:hover {
+  background: #1c2833;
+}
+.global-autoplay-btn {
+  background-color: #eee;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+.global-autoplay-btn.on {
+  background-color: #4caf50;
+  color: white;
+}
+.global-autoplay-btn:hover {
+  background-color: #ccc;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -288,26 +330,24 @@ audio {
     margin-bottom: 2px;
   }
   .featured-info .download-btn {
-    width: 92%;
     text-align: center;
     margin-top: 5px;
   }
   .download-btn {
-    width: 40%;
     text-align: center;
     order: 4;
     margin: 0 auto;
     margin-top: 5px;
     display: block;
-
   }
-  .audio-controls {
+  .audio-item .audio-controls {
     width: 100%;
     max-width: 400px;
   }
- .audio-player {
-  width: 100% ;
- }
+  .audio-item .audio-player {
+    width: 100%;
+  }
+
   .search-wrapper {
     width: 220px;
   }
