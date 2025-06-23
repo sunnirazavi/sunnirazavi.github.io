@@ -1,12 +1,20 @@
 // Audio Data Configuration with updated URLs and lazy-loading attributes
 const audioData = [
+   {
+    id: "lamyati nazeero kafi nazarin",
+    title: "Lamyati Nazeero Kafi Nazarin - New Tarz",
+    Reciter: "Owais Raza Qadri",
+    file: "Naat-Collection/lamyati-nazeero-new-tarz.mp3?v=1.0",
+    thumb: "Thumbnail/lamyati-nazeero-new-tarz.jpg?v=1.0",
+    featured: true,
+  },
   {
     id: "kabe ke badrudduja",
     title: "Kabe Ke Badrudduja Tum Pe Karoron Durood",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/kabe-ke-badrudduja.mp3?v=1.0",
     thumb: "Thumbnail/kabe-ke-badrudduja.jpg?v=1.0",
-    featured: true,
+    featured: false,
   },
   {
     id: "qaseeda burda shareef",
