@@ -1,6 +1,25 @@
 // Audio Data Configuration with updated URLs and lazy-loading attributes
 const audioData = [
-   {
+  {
+    id: "sachi-baat-sikhatey-ye-hain-v1",
+    title: "Sachi Baat Sikhatey Ye Hain Version 1",
+    Reciter: "Owais Raza Qadri",
+    file: "Naat-Collection/sachi-baat-sikhatey-ye-hain-v1.mp3?v=1.0",
+    featured: true,
+  },
+  {
+    id: "sachi-baat-sikhatey-ye-hain-cut1",
+    title: "Sachi Baat Sikhatey Ye Hain Version 2",
+    Reciter: "Owais Raza Qadri",
+    file: "Naat-Collection/sachi-baat-sikhatey-ye-hain-cut1.mp3?v=1.0",
+  },
+  {
+    id: "sachi-baat-sikhatey-ye-hain-cut2",
+    title: "Sachi Baat Sikhatey Ye Hain Version 3",
+    Reciter: "Owais Raza Qadri",
+    file: "Naat-Collection/sachi-baat-sikhatey-ye-hain-cut2.mp3?v=1.0",
+  },
+  {
     id: "lamyati nazeero kafi nazarin",
     title: "Lamyati Nazeero Kafi Nazarin - New Tarz",
     Reciter: "Owais Raza Qadri",
@@ -210,10 +229,11 @@ const allAudioPlayers = [];
 
 // === Generate HTML ===
 function createFeaturedAudio(track) {
+  const thumb = track.thumb || default_thumb;
   return `
     <div class="featured-audio">
       <div class="container">
-        <img src="${track.thumb}" alt="Featured Track" class="featured-thumbnail" loading="lazy" onerror="this.onerror=null; this.src='default_thumb.png';">
+        <img src="${thumb}" alt="Featured Track" class="featured-thumbnail" loading="lazy" onerror="this.onerror=null; this.src='default_thumb.png';">
         <div class="featured-info">
           <h2 class="featured-title">Featured: ${track.title}</h2>
           <audio controls preload="auto" class="audio-player" data-featured>
@@ -232,9 +252,10 @@ function createFeaturedAudio(track) {
 }
 
 function createAudioItem(track) {
+  const thumb = track.thumb || default_thumb;
   return `
     <div class="audio-item">
-      <img src="${track.thumb || default_thumb}" alt="Track Cover" class="thumbnail" loading="lazy" onerror="this.onerror=null; this.src='default_thumb.png';">
+      <img src="${thumb}" alt="Track Cover" class="thumbnail" loading="lazy" onerror="this.onerror=null; this.src='default_thumb.png';">
       <div class="track-info">
         <h3 class="track-title">${track.title}</h3>
         <p class="track-Reciter">${track.Reciter}</p>
@@ -271,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Track all audios
   const observer = new MutationObserver(() => {
-    document.querySelectorAll(".audio-player").forEach(audio => {
+    document.querySelectorAll(".audio-player").forEach((audio) => {
       if (!allAudioPlayers.includes(audio)) {
         allAudioPlayers.push(audio);
 
@@ -284,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         audio.addEventListener("play", () => {
-          allAudioPlayers.forEach(a => {
+          allAudioPlayers.forEach((a) => {
             if (a !== audio) a.pause();
           });
         });
@@ -310,7 +331,6 @@ document.addEventListener("click", function (e) {
     e.target.textContent = audio.loop ? "🔁 Loop: On" : "🔁 Loop: Off";
   }
 });
-
 
 let currentAudio = null;
 function handleAudioControls() {
