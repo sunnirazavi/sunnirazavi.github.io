@@ -1,11 +1,18 @@
 // Audio Data Configuration with updated URLs and lazy-loading attributes
 const audioData = [
   {
+    id: "lamyati nazeero kafi nazarin v1",
+    title: "Lamyati Nazeero Kafi Nazarin - V1",
+    Reciter: "Owais Raza Qadri",
+    file: "Naat-Collection/lamyati-nazeero-kafi-nazarin-v1.mp3?v=1.0",
+    thumb: "Thumbnail/lamyati-nazeero-v1.png?v=1.0",
+    featured: true,
+  },
+  {
     id: "sachi-baat-sikhatey-ye-hain-v1",
     title: "Sachi Baat Sikhatey Ye Hain Version 1",
     Reciter: "Owais Raza Qadri",
     file: "Naat-Collection/sachi-baat-sikhatey-ye-hain-v1.mp3?v=1.0",
-    featured: true,
   },
   {
     id: "sachi-baat-sikhatey-ye-hain-cut1",
